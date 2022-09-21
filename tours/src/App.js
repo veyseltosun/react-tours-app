@@ -15,24 +15,19 @@ function App() {
     setTours(newTours)
   }
   
-
-
-
-  useEffect (( )=>{
-     axios.get(url)
-          .then(response => setTours( response.data))
-          .catch(error => console.log({error}))
-          setLoading(false)
-  },[])
-
-
-function getData() {
+  function getData() {
   axios.get(url)
   .then(response => setTours( response.data))
   .catch(error => console.log({error}))
   setLoading(false)
 }
 
+
+
+
+  useEffect (( )=>{
+     getData()
+  },[])
 
 
   if(loading){
